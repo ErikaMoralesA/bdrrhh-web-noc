@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,10 @@
 <body>
 	
 	<h1> Vacaciones </h1>
+	
+	<button onclick="window.location.href='/bdrrhh-web-noct/vacaciones/findOne?opcion=1';return false;" > Agregar
+		</button>
+	
 	<table>
 	 	<thead>
 	 		<tr>
@@ -30,6 +35,14 @@
 	 			<td>${item.fecha_fin_vacacion}</td>
 	 			<td>${item.total_dias_vacacion}</td>
 	 			<td>${item.vacacion_aprobado}</td>
+	 			
+	 			<button onclick="window.location.href='/bdrrhh-web-noct/vacaciones/findOne?idVacacion=${item.idVacacion}&opcion=1';return false;" > Actualizar
+					</button>
+					
+					<button onclick="window.location.href='/bdrrhh-web-noct/vacaciones/findOne?idVacacion=${item.idVacacion}&opcion=2';return false;" > Borrar
+					</button>
+					</td>
+	 			
 	 		</tr>
 	 	</c:forEach>
 	 		<tr></tr>
