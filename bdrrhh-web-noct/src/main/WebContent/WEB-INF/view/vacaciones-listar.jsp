@@ -15,7 +15,7 @@
 	<button onclick="window.location.href='/bdrrhh-web-noct/vacaciones/findOne?opcion=1';return false;" > Agregar
 		</button>
 	
-	<table>
+	<table border="1">
 	 	<thead>
 	 		<tr>
 	 		<th>id_vacacion</th>
@@ -31,17 +31,18 @@
 	 		<tr>
 	 			<td>${item.id_vacacion}</td>
 	 			<td>${item.id_empleado}</td>
-	 			<td>${item.fecha_inicio_vacacion}</td>
-	 			<td>${item.fecha_fin_vacacion}</td>
+	 			<td>${fn:substring(item.fecha_inicio_vacacion,0,10)}</td>
+	 			<td>${fn:substring(item.fecha_fin_vacacion,0,10)}</td>
 	 			<td>${item.total_dias_vacacion}</td>
 	 			<td>${item.vacacion_aprobado}</td>
 	 			
-	 			<button onclick="window.location.href='/bdrrhh-web-noct/vacaciones/findOne?idVacacion=${item.idVacacion}&opcion=1';return false;" > Actualizar
+	 			<td>
+	 				<button onclick="window.location.href='/bdrrhh-web-noct/vacaciones/findOne?id_vacacion=${item.id_vacacion}&opcion=1';return false;" > Actualizar
 					</button>
 					
-					<button onclick="window.location.href='/bdrrhh-web-noct/vacaciones/findOne?idVacacion=${item.idVacacion}&opcion=2';return false;" > Borrar
+					<button onclick="window.location.href='/bdrrhh-web-noct/vacaciones/findOne?id_vacacion=${item.id_vacacion}&opcion=2';return false;" > Borrar
 					</button>
-					</td>
+				</td>
 	 			
 	 		</tr>
 	 	</c:forEach>
@@ -50,4 +51,4 @@
 	 	</tbody>
 	</table>
 </body>
-</html>>
+</html>

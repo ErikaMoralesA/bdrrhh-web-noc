@@ -3,6 +3,7 @@ package com.distribuida.controller;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,7 @@ public class VacacionController {
 	//JSP - Java server Page, son las paginas web ded tecnologias java
 	
 		@Autowired	
+		@Qualifier("vacacionDAOImpl")
 		private VacacionDAO vacacionDAO;
 		
 		@GetMapping("/findAll")      // path secundario
@@ -53,8 +55,15 @@ public class VacacionController {
 					Vacacion vacacion = vacacionDAO.findOne(id_vacacion);
 					model.addAttribute("vacacion", vacacion);
 				}
-				if(opcion == 1) return "add-vacaciones";  //Actualizacion
-				else return "del-vacaciones";             //Eliminación
+	            if (opcion == 1) {
+	                return "vacaciones-add"; //Actualizacion
+	            } else {
+	                return "vacaciones-del";  //Eliminación
+	            }
+	            
+				//}
+				//if(opcion == 1) return "vacaciones-add";  //Actualizacion
+				//else return "vacaciones-del";             //Eliminación
 				
 		//	} catch (Exception e) {
 		//		// TODO: handle exception
@@ -88,16 +97,16 @@ public class VacacionController {
 		//	}
 
 			}
-			return "redirect:/categorias/finAll";    //ir a formulario web por path o url.
+			return "redirect:/vacaciones/finAll";    //ir a formulario web por path o url.
 		}
 		@GetMapping("/del")
-		public String del(@RequestParam("idCategoria") @Nullable Integer idCategoria) {
+		public String del(@RequestParam("id_vacacion") @Nullable Integer id_vacacion) {
 			
 			//try {
 			
-				vacacionDAO.del(idCategoria);
+				vacacionDAO.del(id_vacacion);
 				
-				return "redirect:/categorias/finAll";
+				return "redirect:/vacaciones/finAll";
 				
 		//	} catch (Exception e) {
 		//		// TODO: handle exception

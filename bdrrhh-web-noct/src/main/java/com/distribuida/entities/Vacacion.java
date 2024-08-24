@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,8 +22,10 @@ public class Vacacion {
 	private int id_vacacion;
 	@Column(name="id_empleado")
 	private int id_empleado;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name="fecha_inicio_vacacion")
 	private Date fecha_inicio_vacacion;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name="fecha_fin_vacacion")
 	private Date fecha_fin_vacacion;
 	@Column(name="total_dias_vacacion")
