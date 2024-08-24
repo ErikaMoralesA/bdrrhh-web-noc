@@ -10,7 +10,7 @@
    <h1> Vacaciones </h1>
       <form action="del" method="get">
 
-          <input type="hidden" id="id_vacacion" name="id_vacacion" value="${vacaciones.id_vacacion}"/>
+          <input type="hidden" id="id_vacacion" name="id_vacacion" value="${vacacion.id_vacacion}"/>
           <strong>¿Desea Eliminar el dato?</strong>
            <br/>
            <button type="submit">Guardar</button>

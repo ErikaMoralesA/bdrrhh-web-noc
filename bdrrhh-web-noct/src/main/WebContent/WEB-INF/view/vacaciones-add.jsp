@@ -28,7 +28,7 @@
 		<br/>
 		
 		Total dias de vacaciones
-		<input type="text" id="total_dias_vacacion" name="total_dias_vacacion" value="${vacacion.total_dias_vacacion}">
+		<input type="number" id="total_dias_vacacion" name="total_dias_vacacion" value="${vacacion.total_dias_vacacion}">
 		<br/>
 		
 		Vacacion aprobado
@@ -39,7 +39,7 @@
         
 		<button type="submit">Guardar</button>
  <button type="button" onclick="window.location.href='/bdrrhh-web-noct/vacaciones/findAll';return false;">
-  CANCELAR 
+  CANCELAR </button>
     </form>
 
 </body>

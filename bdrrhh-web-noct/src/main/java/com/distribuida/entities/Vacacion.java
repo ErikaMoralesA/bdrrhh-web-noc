@@ -24,10 +24,10 @@ public class Vacacion {
 	private int id_empleado;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name="fecha_inicio_vacacion")
-	private Date fecha_inicio_vacacion;
+	private java.sql.Date fecha_inicio_vacacion;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name="fecha_fin_vacacion")
-	private Date fecha_fin_vacacion;
+	private java.sql.Date fecha_fin_vacacion;
 	@Column(name="total_dias_vacacion")
 	private int total_dias_vacacion;
 	@Column(name="vacacion_aprobado")
@@ -37,7 +37,7 @@ public class Vacacion {
 	
 	public Vacacion () {}
 	
-	public Vacacion(int id_vacacion, int id_empleado, Date fecha_inicio_vacacion, Date fecha_fin_vacacion,
+	public Vacacion(int id_vacacion, int id_empleado, java.sql.Date fecha_inicio_vacacion, java.sql.Date fecha_fin_vacacion,
 			int total_dias_vacacion, String vacacion_aprobado) {
 		
 		this.id_vacacion = id_vacacion;
@@ -74,7 +74,7 @@ public class Vacacion {
 	}
 
 
-	public void setFecha_inicio_vacacion(Date fecha_inicio_vacacion) {
+	public void setFecha_inicio_vacacion(java.sql.Date fecha_inicio_vacacion) {
 		this.fecha_inicio_vacacion = fecha_inicio_vacacion;
 	}
 
@@ -84,7 +84,7 @@ public class Vacacion {
 	}
 
 
-	public void setFecha_fin_vacacion(Date fecha_fin_vacacion) {
+	public void setFecha_fin_vacacion(java.sql.Date fecha_fin_vacacion) {
 		this.fecha_fin_vacacion = fecha_fin_vacacion;
 	}
 
